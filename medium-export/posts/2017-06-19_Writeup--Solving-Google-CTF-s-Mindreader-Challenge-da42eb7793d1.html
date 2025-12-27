@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Writeup: Solving Google CTF’s Mindreader Challenge</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Writeup: Solving Google CTF’s Mindreader Challenge</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+The challenge is mainly based on the Path Transversal attack which is a common vulnerability in websites. The Path Transversal attack is a…
+</section>
+<section data-field="body" class="e-content">
+<section name="c780" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="e314" id="e314" class="graf graf--h3 graf--leading graf--title">Writeup: Solving Google CTF’s Mindreader Challenge</h3><p name="bca0" id="bca0" class="graf graf--p graf-after--h3 graf--trailing">The challenge is mainly based on the Path Transversal attack which is a common vulnerability in websites. The Path Transversal attack is a method of using special characters to access directories and files on a server. This method works only when the query string variables are used to access files on the server (which was the case here).</p></div></div></section><section name="2247" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="8dc8" id="8dc8" class="graf graf--h3 graf--leading"><strong class="markup--strong markup--h3-strong">Finding the Vulnerability</strong></h3><p name="aa4d" id="aa4d" class="graf graf--p graf-after--h3">Let’s start with the challenge now. This was the screen I was presented with.</p><figure name="10c1" id="10c1" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*O0bHu-7tzuvtExA1O_az4g.png" data-width="575" data-height="119" src="https://cdn-images-1.medium.com/max/800/1*O0bHu-7tzuvtExA1O_az4g.png"></figure><p name="8fd5" id="8fd5" class="graf graf--p graf-after--figure">Entering something random got us this.</p><figure name="a196" id="a196" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*w8eWiIfmLWldQR21F9j7kw.png" data-width="865" data-height="170" src="https://cdn-images-1.medium.com/max/800/1*w8eWiIfmLWldQR21F9j7kw.png"></figure><p name="5f9e" id="5f9e" class="graf graf--p graf-after--figure">But hold on, there was a parameter in the query string named “f”. It was time to mess around with this. The next thing I tried was reading files by changing this parameter to see if it worked.</p><p name="949a" id="949a" class="graf graf--p graf-after--p">The most common thing that everyone tries, is try and read /etc/passwd. So to do that, our link would be <a href="http://mindreader.web.ctfcompetition.com/f=/etc/passwd" data-href="http://mindreader.web.ctfcompetition.com/f=/etc/passwd" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">http://mindreader.web.ctfcompetition.com/f=/etc/passwd</a></p><figure name="42ee" id="42ee" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*F-BNwg4TYwj37xNUFiR-vw.png" data-width="1200" data-height="252" src="https://cdn-images-1.medium.com/max/800/1*F-BNwg4TYwj37xNUFiR-vw.png"></figure><p name="c809" id="c809" class="graf graf--p graf-after--figure graf--trailing">Voila! The file’s contents are out. This means the website is indeed vulnerable to the path transversal attack. Let’s move on to finding the flag.</p></div></div></section><section name="0236" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="0518" id="0518" class="graf graf--h3 graf--leading"><strong class="markup--strong markup--h3-strong">Finding the Flag</strong></h3><p name="52b7" id="52b7" class="graf graf--p graf-after--h3">Now that we know what the vulnerability is, we start by playing around more with that parameter. I tried a few things like “flag.txt” “flag” or “../flag” (just in case it was in the previous directory) but that didn’t work and resulted in a 404.</p><figure name="fd54" id="fd54" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*Zp9koc3CUDrfUG9m_qfQbg.png" data-width="835" data-height="152" src="https://cdn-images-1.medium.com/max/800/1*Zp9koc3CUDrfUG9m_qfQbg.png"></figure><p name="355f" id="355f" class="graf graf--p graf-after--figure">Now, to get around this, instead of finding the flag, we try and find the code that is running on the website and serving these pages. To find that, we play with the parameter again. This is Google CTF, and I was aware of the fact that this might be NodeJS or Python. Since Google makes most of it’s things on Python, I guessed the language to be python. So let’s try some python-related files. I tried a few guesses: “main.py”, “app.py”, “server.py” and voila, main.py was actually a file.</p><figure name="24bb" id="24bb" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*TB6twaaAPUdmW7ThffeM1w.png" data-width="1210" data-height="140" src="https://cdn-images-1.medium.com/max/800/1*TB6twaaAPUdmW7ThffeM1w.png"><figcaption class="imageCaption">Contents of main.py</figcaption></figure><p name="e39a" id="e39a" class="graf graf--p graf-after--figure">Now that we have main.py, we can now see how everything is working. The server was serving pages using <strong class="markup--strong markup--p-strong">Flask (a python web framework). </strong>Next, we saw that it was serving a page called “index.html” which was the page that was served to us initially. However, our main aim was to find the flag which was in one of the<strong class="markup--strong markup--p-strong"> Environment variables</strong> according to the line:<strong class="markup--strong markup--p-strong"> “os.environ[‘FLAG’]”</strong></p><p name="b9db" id="b9db" class="graf graf--p graf-after--p">So now, we had to find a way to get the Environment variable from the server. Environment Variables are stored in a file called <strong class="markup--strong markup--p-strong">“/proc/self/environ”</strong>. But hold on, there’s a problem. If you try opening /proc/environ (<a href="http://mindreader.web.ctfcompetition.com/?f=/proc/self/environ" data-href="http://mindreader.web.ctfcompetition.com/?f=/proc/self/environ" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">http://mindreader.web.ctfcompetition.com/?f=/proc/self/environ</a>), we get an error.</p><figure name="b22e" id="b22e" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*MJxMF9KMpF6ScVoaAU8VSg.png" data-width="830" data-height="197" src="https://cdn-images-1.medium.com/max/800/1*MJxMF9KMpF6ScVoaAU8VSg.png"></figure></div></div></section><section name="f0bf" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="6159" id="6159" class="graf graf--h3 graf--leading">Solving the final hurdle to get the flag</h3><p name="98bf" id="98bf" class="graf graf--p graf-after--h3">We need <strong class="markup--strong markup--p-strong">/proc/self/environ </strong>to get the flag. But we read the code, there is a line that states that if the parameter contains the words: “<strong class="markup--strong markup--p-strong">proc, random, zero, stdout or stderr”</strong>, it’ll give us a<strong class="markup--strong markup--p-strong"> 403 (Forbidden) page</strong>.</p><p name="f693" id="f693" class="graf graf--p graf-after--p">Here’s the code that does that.</p><blockquote name="df30" id="df30" class="graf graf--blockquote graf-after--p">f = request.args[‘f’] if re.search(r’proc|random|zero|stdout|stderr’, f): abort(403)</blockquote><p name="6f61" id="6f61" class="graf graf--p graf-after--blockquote">Since our URL contains the word <strong class="markup--strong markup--p-strong">“proc”</strong>, we get a 403 (Forbidden page). To get around this, I had to find another way to access<strong class="markup--strong markup--p-strong"> /proc/self/environ </strong>by using something called <strong class="markup--strong markup--p-strong">“Symbolic Links”. </strong>Symbolic Links are a way to access certain files or folders through another path. It’s the same way Windows Shortcuts work.</p><p name="30d9" id="30d9" class="graf graf--p graf-after--p">I started looking for a symbol link directly to <strong class="markup--strong markup--p-strong">/proc/self/environ; </strong>However, I couldn’t find one. In that case, I started to look for symbolic links to /<strong class="markup--strong markup--p-strong">proc/self </strong>in the<strong class="markup--strong markup--p-strong"> /etc/ and /dev/ </strong>since they’re the most common folders where I could find them. To find symbolic links, I used the command on my local ubuntu machine:</p><blockquote name="8864" id="8864" class="graf graf--blockquote graf-after--p">ls -lash /etc | grep “ -&gt; “</blockquote><p name="aa46" id="aa46" class="graf graf--p graf-after--blockquote">And similarly, for /dev</p><blockquote name="db34" id="db34" class="graf graf--blockquote graf-after--p">ls -lash /dev | grep “ -&gt; “</blockquote><figure name="e55f" id="e55f" class="graf graf--figure graf-after--blockquote"><img class="graf-image" data-image-id="1*WJW4mzMusQotHMJCxZYw_w.png" data-width="603" data-height="125" src="https://cdn-images-1.medium.com/max/800/1*WJW4mzMusQotHMJCxZYw_w.png"></figure><p name="6f07" id="6f07" class="graf graf--p graf-after--figure">Luckily, I found a file: <strong class="markup--strong markup--p-strong">“/dev/fd”</strong> that had a symbolic link to<strong class="markup--strong markup--p-strong"> “/proc/self/fd”<br></strong>Now, we had to craft a way, to make our way to <strong class="markup--strong markup--p-strong">/proc/self/environ </strong>instead of <strong class="markup--strong markup--p-strong">/proc/self/fd</strong>. To do this, <strong class="markup--strong markup--p-strong">we use “..” to go back one directory and then access “environ”. </strong>Here’s the final path I entered:</p><blockquote name="1bdd" id="1bdd" class="graf graf--blockquote graf-after--p">/dev/fd/../environ</blockquote><p name="8e7b" id="8e7b" class="graf graf--p graf-after--blockquote">I did this because, /dev/fd linked to /proc/self/fd, then I used “..” to go back one directory which brought us back to /proc/self and then I added /environ in the end. This ultimately means the following:</p><blockquote name="7356" id="7356" class="graf graf--blockquote graf-after--p">/proc/self/fd/../environ</blockquote><p name="e130" id="e130" class="graf graf--p graf-after--blockquote">which means /proc/self/environ. Now the symbolic version of this (as mentioned above) was:</p><blockquote name="61b8" id="61b8" class="graf graf--blockquote graf-after--p">/dev/fd/../environ</blockquote><p name="f0a3" id="f0a3" class="graf graf--p graf-after--blockquote">The URL therefore became:</p><blockquote name="99f5" id="99f5" class="graf graf--blockquote graf-after--p"><a href="http://mindreader.web.ctfcompetition.com/?f=/dev/fd/../environ" data-href="http://mindreader.web.ctfcompetition.com/?f=/dev/fd/../environ" class="markup--anchor markup--blockquote-anchor" rel="nofollow noopener" target="_blank">http://mindreader.web.ctfcompetition.com/?f=/dev/fd/../environ</a></blockquote><figure name="0511" id="0511" class="graf graf--figure graf-after--blockquote"><img class="graf-image" data-image-id="1*ionHIfVpCD_QOVEdHSbTZw.png" data-width="1439" data-height="179" src="https://cdn-images-1.medium.com/max/800/1*ionHIfVpCD_QOVEdHSbTZw.png"></figure><p name="230d" id="230d" class="graf graf--p graf-after--figure">Voila! We’ve finally got our flag.</p><p name="80a4" id="80a4" class="graf graf--p graf-after--p graf--trailing">FLAG=CTF{ee02d9243ed6dfcf83b8d520af8502e1}</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@ananayarora" class="p-author h-card">Ananay Arora</a> on <a href="https://medium.com/p/da42eb7793d1"><time class="dt-published" datetime="2017-06-19T18:52:38.333Z">June 19, 2017</time></a>.</p><p><a href="https://medium.com/@ananayarora/writeup-solving-google-ctfs-mindreader-challenge-da42eb7793d1" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on July 13, 2025.</p></footer></article></body></html>

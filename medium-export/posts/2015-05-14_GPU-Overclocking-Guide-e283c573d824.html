@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>GPU Overclocking Guide</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">GPU Overclocking Guide</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="d983" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="768c" id="768c" class="graf graf--h3 graf--leading graf--title">GPU Overclocking Guide</h3><p name="b62f" id="b62f" class="graf graf--p graf-after--h3">All of us want the best out of our hardware whether it is our PC, mobile phone or any other mobile device. However, we hardly ever use a device to its full potential. Overclocking is the art of pushing the potential of graphics card and extracting the maximum potential of electronic components. The device supplied by manufacturers are shipped with certain factory settings which are same for the models of the same SKU, however the maximum potential of each device is different. In case of semiconductors, processors and primary all the electronic devices, the manufacturers use a process called binning for the production. This is basically testing each model (as in this case processor) and decide which SKU it would match. As per the silicon lottery, no two pieces of silicon can be the same; to equalize this disparity, manufacturers set all the similar processors to a mutually achievable clock speed. It is up to the user to whether discover the true potential or use the standard settings.</p><p name="fdbb" id="fdbb" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Things to keep in mind before Overclocking</strong></p><ul class="postList"><li name="f606" id="f606" class="graf graf--li graf-after--p">As all processors have varying overclocking headroom, the overclock may also differ.</li><li name="b6be" id="b6be" class="graf graf--li graf-after--li">As overclocking and overvolting results in excessive heat output, a decent cooling solution would help achieve a higher and stable overclock.</li><li name="0b69" id="0b69" class="graf graf--li graf-after--li">Over clocking is dangerous; overvolting may fry your processor which may not be covered under the manufacturer’s warranty.</li></ul><p name="b5e7" id="b5e7" class="graf graf--p graf-after--li"><strong class="markup--strong markup--p-strong">Evaluate Current Performance.</strong></p><p name="e39f" id="e39f" class="graf graf--p graf-after--p">Before making any changes, be aware of the your card’s current performance. You would have to stress testing your card to learn its performance, I would recommend using Unigen Heaven for this purpose.</p><p name="6671" id="6671" class="graf graf--p graf-after--p">Also, you would be requiring a GPU tweaking utility, my personal favorite is Asus’ GPU Tweak both for Nvidia and AMD based cards.</p><figure name="8556" id="8556" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*xWfmXH-RTo8-hfqd.png" data-width="300" data-height="215" data-external-src="http://www.lnexun.com/wp-content/uploads/2015/05/1-300x215.png" alt="1" src="https://cdn-images-1.medium.com/max/800/0*xWfmXH-RTo8-hfqd.png"></figure><p name="81b6" id="81b6" class="graf graf--p graf-after--figure">Run Unigen on the native resolution at highest settings and 4xAA to really push your GPU to its limits. Once done, note down the max, min and average frame rate also note down the standard and max clock speed attained during the session and the max temperature as well.</p><p name="9265" id="9265" class="graf graf--p graf-after--p">All of the above information acts as the baseline for your overclock.</p><p name="e04d" id="e04d" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Ease your way Up</strong></p><p name="c814" id="c814" class="graf graf--p graf-after--p">However tempting it may seem to turn up the GPU clock and the Memory clock, it will ruin you card as each card can only operate to a certain frequency. It is always better to adjust your GPU and memory Clock speed in small increments.</p><p name="c6cb" id="c6cb" class="graf graf--p graf-after--p">Before adjusting anything, fire up Unigine Heaven in windowed mode and GPU Tweak. This will enable you to adjust settings while the benchmark is in progress.</p><figure name="b491" id="b491" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*Krk6VfrHBrsjKuCn.png" data-width="300" data-height="188" data-external-src="http://www.lnexun.com/wp-content/uploads/2015/05/2-300x188.png" alt="2" src="https://cdn-images-1.medium.com/max/800/0*Krk6VfrHBrsjKuCn.png"></figure><p name="a9f7" id="a9f7" class="graf graf--p graf-after--figure">First, increase Memory clock speed in 5MHz increments. Slow progressing will save your card from frying. At some point you will observe instability and finally the system will crash. Check Unigine after every 10MHz for large solid blocks, they are the tell-tale sign for Memory instability. When this does happen, dial back to the last stable Memory clock speed, and that’s your limit to the Memory of you graphics card.</p><figure name="e445" id="e445" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*4qucJZgmiqRF_v-o.jpg" data-width="300" data-height="290" data-external-src="http://www.lnexun.com/wp-content/uploads/2015/05/4-300x290.jpg" alt="4" src="https://cdn-images-1.medium.com/max/800/0*4qucJZgmiqRF_v-o.jpg"></figure><p name="eb77" id="eb77" class="graf graf--p graf-after--figure">As for the GPU, the overclock would not be that much as compared to the memory. But the performance increase would be more significant. It follows the similar method, just increase the slider in 5–10MHz increments. this time though you may observe strange artefacts when the GPU feels stressed like differently coloured pixel dots and unwanted coloured flashes.</p><figure name="20d6" id="20d6" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*JfmQfp2dph-SSl0c.jpg" data-width="300" data-height="212" data-external-src="http://www.lnexun.com/wp-content/uploads/2015/05/3-300x212.jpg" alt="3" src="https://cdn-images-1.medium.com/max/800/0*JfmQfp2dph-SSl0c.jpg"></figure><p name="c6c5" id="c6c5" class="graf graf--p graf-after--figure">Another thing to keep in mind is the temperature, this however, is very subjective you may decide whatever temperature is comfortable with you but try keeping it below 90ºC, as running graphics card at very high temperatures may result in throttling and ultimately results in shortening the lifespan of the card. Personally I like to keep it around 70ºC-75ºC. In more recent graphics cards by Nvidia which feature GPU Boost 2.0 you can choose maximum temperature and voltage and the GPU overclocks itself keeping all the variables in mind.</p><p name="3f0d" id="3f0d" class="graf graf--p graf-after--p">When you reach a state when the GPU can’t handle the stress, revert back to the last stable settings, this is the maximum frequency your GPU can handle.</p><p name="7804" id="7804" class="graf graf--p graf-after--p">Once you have determined the maximum GPU and memory frequencies, try applying the combination of both the settings. Most probably it won’t work, don’t worry, just identify the type of artefacts and accordingly bring down the settings. If you are not sure, just bring down the settings by 5–10Mhz. Keep doing this till you reach a stable benchmark.</p><p name="ae76" id="ae76" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Stress Test</strong></p><p name="a4ea" id="a4ea" class="graf graf--p graf-after--p">Once your system gets through the Unigine Heaven benchmark, it is surely a good sign, but to be 100% sure just run another benchmark in loop for another hour or so. I would usually recommend MSI Kombustor. This would certainly make sure that your system would not crash in real world applications.</p><p name="7226" id="7226" class="graf graf--p graf-after--p">Another good step is to run GPU intensive games like Titanfall and Battlefield 4, meanwhile you may run GPU Tweak to monitor your graphics card and study the temperature.</p><p name="919c" id="919c" class="graf graf--p graf-after--p">Should your GPU not withstand the stress load just reboot and bring down the overclock settings by 5–10 Mhz.</p><figure name="513b" id="513b" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*0vTZaCw8mRAsKDk8.png" data-width="300" data-height="188" data-external-src="http://www.lnexun.com/wp-content/uploads/2015/05/5-300x188.png" alt="5" src="https://cdn-images-1.medium.com/max/800/0*0vTZaCw8mRAsKDk8.png"></figure><p name="7ba4" id="7ba4" class="graf graf--p graf-after--figure">Once completing all the steps you are ready to fire up any game and experience smoother and better gaming experience. However, if you don’t get a massive improvement don’t be disheartened; if you do manage to achieve a good overclock it would not be a superbly massive difference; after all, a GTX 660 would not perform like R9 295x2, but you will certainly see a significant improvement in the frame rate, which makes a lot of difference in the smoothness of the game play.</p><p name="ab22" id="ab22" class="graf graf--p graf-after--p graf--trailing">This procedure is somewhat the most basic overclocking method. As I discussed earlier you may increase the overclocking potential of your graphics card by utilizing a decent cooling solution. Once you are comfortable with this and willing to take it to next level, you may try your hands on the dark art of overvolting. However bare in mind that may fry your GPU if not done properly. You may even try hot wiring the graphics card or overclocking using liquid nitrogen should you desire.</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@ananayarora" class="p-author h-card">Ananay Arora</a> on <a href="https://medium.com/p/e283c573d824"><time class="dt-published" datetime="2015-05-14T06:28:30.000Z">May 14, 2015</time></a>.</p><p><a href="https://medium.com/@ananayarora/gpu-overclocking-guide-e283c573d824" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on July 13, 2025.</p></footer></article></body></html>

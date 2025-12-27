@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Three Pieces</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Three Pieces</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="fc56" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="6556" id="6556" class="graf graf--h3 graf--leading graf--title">Three Pieces</h3><p name="96d4" id="96d4" class="graf graf--p graf-after--h3">For one I am incapable of making 5 pieces, and well I can’t classify the three that I have, ergo these shall be forever be three pieces… Now as for these questions, at a minimum I expect Rungta, Azgez, and “the dormant female programmer in 12th/11th” (taken from somewhere on this blog, probably) to solve these, though if neone else does it, well &amp; good… If neone outside of Exun gets all three done, then well while I can’t promise ur inclusion into the club (alumnus, can’t really do that), however I can wud recommend that u be taken in, and well my recommendation wud probably work. For lack of time, and effort I haven’t put the problems into a more succinct form, so ur gonna have to work around that. So there that gets the preliminaries out of the way.<br><br><br><br>Now for three simple rules</p><ol class="postList"><li name="da9c" id="da9c" class="graf graf--li graf-after--p">Contrary to popular belief, I do not have access to a grid or a super-computing facility, so make sure ur code can run in sane amts of time.</li><li name="8b9f" id="8b9f" class="graf graf--li graf-after--li">Some of these questions r solvable by a single mathematical equation, some by recursion. Now I am <strong class="markup--strong markup--li-strong">not</strong> a fan of simulations, so if u get the these done without simulating the actual process, then well u get more points in my book, not all that useful, but well u never know…</li><li name="a099" id="a099" class="graf graf--li graf-after--li">In code u submit to me, umm pls don’t use a void main(), since as of 6 or 7 years ago, ANSI regulations state that void main() is not a valid main funtion, use int main() instead, and return a value of 1.</li></ol><p name="d9b6" id="d9b6" class="graf graf--p graf-after--li"><strong class="markup--strong markup--p-strong">The Questions</strong></p><ol class="postList"><li name="f31c" id="f31c" class="graf graf--li graf-after--p">Throughout this question, the term line and ray are supposed to take on their usual mathematical meanings, which is to say that a line extends infinitely in an infinite two dimensional plane, and a ray starts of at a particular point, but directional extends unto infinity. The question assumes that ur working on an infinite 2d plain. Now the question itself is pretty simple, so there r two parts to it. <strong class="markup--strong markup--li-strong">a)</strong> Given n (n&gt;2) lines, what is the maximum number of regions u can divide ur 2d plain into? <strong class="markup--strong markup--li-strong">b)</strong> Now instead of lines if we used two rays at an angle, in a sort of V formation, what is the maximum number of regions with n (n&gt;1) Vs then?</li><li name="9931" id="9931" class="graf graf--li graf-after--li">There’s a room with n walls (2&lt;n&lt;10), shaped like a regular n sided polygon, with a mirror on each wall. The first wall contains a light source, for which you have a given x coordinate and the angle between the light beam and the wall (horizontal angle, the light beam is so arranged that the beam itself lies on a plane parallel to the floor of the room), and given the x coordinate extents (two coords each) of each mirror, predict the number of reflections that take place before the beam is absorbed. Assume that walls themselves are perfect absorbers of light, as is the light source. Also predict the number of times the rays intersect….</li><li name="ddf6" id="ddf6" class="graf graf--li graf-after--li">A lil bit of military strategy. Umm well let’s have this as a story. Ur in one of those essentially violent central African countries, a part of a rather underfunded UNPKF, and the only possibility of survival rests in understanding rebel attack strategies. Now the rebel army follows some very peculiar rules, for one they always conduct battles with 12 units, and all battles last for 16 hrs. The rebel army is strictly hierarchal, so much so that on the pain of death, each subordinate wud do whatever his superior’s unit did and relay his superior’s commands to his subordinates immidiately. Unfortunately the rebel army relies on an extremely slow, though highly successful means of communication, and each message takes an hour to relay, which is to say that each subordinate does what his superior did an hour ago. Now given that 1 represents attack, and 0 represents retreat, and given an hour by hour analysis of rebel movements, ur program shud figure out the hierarchy of the rebel army. <strong class="markup--strong markup--li-strong">Every commander has a minimum of two subordinates.</strong><br><br><br><br>For instance if the movements read something like:<br><br>1 2 3 4 5 6 7 8 9 0 1 2<br><br><br><br>1 0 1 1 1 0 0 1 1 0 0 1<br><br>0 1 1 1 0 1 1 1 1 1 1 1 <br><br>1 0 0 1 1 0 1 0 1 1 1 1<br><br>1 1 0 1 1 1 0 1 1 1 1 0<br><br>0 1 1 0 0 1 0 1 0 0 0 0<br><br>0 0 1 0 0 0 1 0 0 0 0 1<br><br>1 0 0 1 1 0 1 0 1 1 1 1<br><br>1 1 1 1 1 1 0 1 1 1 1 0<br><br>0 1 1 0 0 1 1 1 0 0 0 1<br><br>1 0 0 1 1 0 1 0 1 1 1 1<br><br>1 1 0 1 1 1 0 1 1 1 1 0<br><br>0 1 0 0 0 1 0 1 0 0 0 0<br><br>0 0 1 0 0 0 0 0 0 0 0 0<br><br>0 0 0 0 0 0 1 0 0 0 0 1<br><br>1 0 0 1 1 0 0 0 1 1 1 0<br><br>0 1 1 0 0 1 0 1 0 0 0 0<br><br><br><br>then u shud eventually find the following hierarchy<br><br>Unit 3 commands Units 7 &amp; 12<br><br>Unit 7 commands Units 1, 4 &amp; 5<br><br>Unit 5 commands Units 2, 6 &amp; 8<br><br>Unit 12 commands units 9, 10 &amp; 11</li></ol><p name="cd0d" id="cd0d" class="graf graf--p graf-after--li graf--trailing">Neways best of luck doing these, mail me the solutions at <a href="mailto:aurojit@gmail.com" data-href="mailto:aurojit@gmail.com" class="markup--anchor markup--p-anchor" target="_blank">aurojit@gmail.com</a>, and well I’ll test them and get back to u….<br><br><br><br>Ze Panda<br><br>(The Mascot)</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@ananayarora" class="p-author h-card">Ananay Arora</a> on <a href="https://medium.com/p/d9ea5b60c12"><time class="dt-published" datetime="2004-05-01T06:05:00.000Z">May 1, 2004</time></a>.</p><p><a href="https://medium.com/@ananayarora/three-pieces-d9ea5b60c12" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on July 13, 2025.</p></footer></article></body></html>

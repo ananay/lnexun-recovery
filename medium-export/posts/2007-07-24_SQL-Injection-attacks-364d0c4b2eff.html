@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>SQL Injection attacks</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">SQL Injection attacks</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="e928" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="5702" id="5702" class="graf graf--h3 graf--leading graf--title">SQL Injection attacks</h3><p name="eb4e" id="eb4e" class="graf graf--p graf-after--h3 graf--trailing">One of the most prominent loopholes, which almost every site has, is an SQL security loophole. Sites that use the SQL database system are the ones vulnerable to it.<br>An SQL Injection Attack is a form of attack that comes from user input that remains unchecked on the user end. The objective is to fool the database system into running malicious code that will reveal sensitive information or otherwise compromise the server.<br>There are two main types of attacks. First-order attacks are when the attacker receives the desired result immediately, either by direct response from the application he is interacting with or by some other response mechanism, such as e-mail. Second-order attacks are when the attacker injects some data that will reside in the database, but the payload is not immediately activated.<br><br>To be very precise, it gives you the source of the files where all the important data is stored.<br>Here is an example-<br><br>1) Open the following site: <a href="http://www.sanjeevkapoor.com/" data-href="http://www.sanjeevkapoor.com/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">http://www.sanjeevkapoor.com/</a> : I have already informed the administrator about the loopholes through a letter also, but no action has been taken.<br>2) Click on sign in and type the username as: admin OR 1=1 — and password as: ‘OR’’=’<br>Now you see how powerful this Injection Attack is. For me to explain how this happened, you need to know some amount of SQL. So this is what actually happens when you supply a password and login to a logon form.<br>SQLQuery=”SELECT Username FROM Users WHERE Username=’” &amp; StrUsername &amp; “ ‘ AND Password=’ “ &amp; Strpassword &amp; “ ‘ “<br>StrAuthcheck= GetqueryResult(SQL query)<br>If strAuthenticated=” “ then<br> Boolauthenticated=False<br>Else<br> Boolauthenticated= True<br>The logon and password actually form an SQL query, which goes through the user’s table, and tries to find a match for the username and password you supplied. If a match is found then a string is stored in a variable (strauthcheck) but if this string remains empty then you are not authorized. So by using the SQL queries like 1=1 — (which means one is equal to one) you are able to fool the SQL sever which is actually checking for authentication.<br><br><br>Article by : — Ankit Srivastava<br> Head, Network Security — Exunclan</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@ananayarora" class="p-author h-card">Ananay Arora</a> on <a href="https://medium.com/p/364d0c4b2eff"><time class="dt-published" datetime="2007-07-24T05:50:00.000Z">July 24, 2007</time></a>.</p><p><a href="https://medium.com/@ananayarora/sql-injection-attacks-364d0c4b2eff" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on July 13, 2025.</p></footer></article></body></html>

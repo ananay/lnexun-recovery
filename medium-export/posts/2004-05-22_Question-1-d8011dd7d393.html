@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Question 1</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Question 1</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="0ac0" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="f026" id="f026" class="graf graf--h3 graf--leading graf--title">Question 1</h3><p name="2a55" id="2a55" class="graf graf--p graf-after--h3 graf--trailing">Question 1<br><br><br><br>The Nilgiri Tahr<br><br><br><br>The Nilgiri Tahr is a mountain goat that lives in the Nilgiri hills on the border between Tamil Nadu and Kerala. The tahr lives along steep rock cliffs where grass does not grow easily. The tahr is a very good climber and can balance itself even on the steepest of cliffs. However, since it is a rather short animal, it cannot jump from one rock to another if the difference in height between the rocks is more than one foot.<br><br>One such tahr finds itself at the top-left corner of an M x N rectangular grid of rocks. There is a clump’ of grass at the opposite (bottom-right) corner. The tahr would like to find a way from its current position to the grass. The tahr cannot jump over rocks and can move from a given rock to only one of its four neighbours (left, right, up or down). The tahr must of course always stay within the grid. Further, remember that it can jump only one foot up or down, so it can move from a rock to its neighbour only if the difference in height between the two rocks is at most one foot. Your task is to help the tahr find such a path to the<br><br>grass, if it exists. If there is more than one valid path for the tahr to follow, it is sufficient to identify anyone path.<br><br>For example consider the following grid of rocks, where the number at each position in the grid indicates the height of the rock, in feet, at that position.<br><br><br><br> <br><br>7 9 8 5<br><br> 6 3 2 4<br><br> 5 4 1 5<br><br> 2 6 1 1<br><br><br><br>Here is a path that the tahr can follow to reach the grass. The path follows the rocks labelled by the letters (a), (b), …, (i), in that order.<br><br><br><br> <br><br>7 (a) 9 8 5<br><br> 6 (b) 3 (e) 2 (1) 4<br><br> 5 © 4 (d) 1 (g) 5<br><br> 2 6 1 (h) 1 (i)<br><br><br><br>Input format<br><br>The first line of input contains two integers M and N, specifying the number of rows and columns in the grid, respectively, where 1 &lt; = M &lt;= 1000 and 1 &lt;= N &lt;= 1000. The next M lines of input contain N positive integers each. The jth integer on the ith line is the height of the rock in the ith row and jth column of the grid.<br><br><br><br>Output format.<br><br> . If there is no path for the tahr to reach the grass. print out a single line containing thenumber O.<br><br><br><br>. If there is a path, the first line of output should be the integer 1. After this, you have<br><br> to print out anyone path that the tahr can follow to reach the grass. The path is<br><br><br><br>1<br><br>described by a sequence of lines. Each line should consist of two integers. The integers Xi and Yi printed out on line i indicate that the ith step that the tahr takes should be to row Xi and column Yi.<br><br>Since the tahr always travels from the top-left corner to the bottom-right corner of the grid, the first line of the path is always 1 1 and the last line is always M N.<br><br><br><br>Example<br><br>Here is sample input and output corresponding to the example discussed above.<br><br><br><br>Sample input<br><br><br><br>4 4<br><br>7 9 8 5 <br><br>6 3 2 4<br><br>5 4 1 5 <br><br>2 6 1 1<br><br><br><br>Sample output<br><br><br><br>1<br><br>1 1 <br><br>2 1 <br><br>3 1<br><br>3 2<br><br>2 2<br><br>2 3<br><br>3 3 <br><br>4 3<br><br>4 4<br><br><br><br><br><br><br><br>Question 2<br><br>The Rajah’s Wrestlers<br><br><br><br>Once upon a time, there lived a Rajah who was extremely fond of wrestling. In those days, wrestlers had supernatural powers. To win a match a wrestler relied not only on his own strength but also on a magical ring that he wore while fighting. This ring allowed a wrestler to gain additional strength proportional to the strength of his opponent.<br><br>The strength of a wrestler and the magical power of his ring are both positive integers. When wrestler A fights wrestler B, the fight index of wrestler A for this match is given by A’s own strength plus the strength of wrestler B multiplied by the magical power of A’s ring. Each match is won by the wrestler whose fight index is higher for that match.<br><br>For example, suppose that wrestler A has strength 10 and wears a ring whose magical power is 3 and wrestler B has strength 18 and wears a ring whose magical power is 4. If these two wrestlers fight each other, wrestler A wins. This is because A’s fight index for this match is 10 + (3 x 18) = 64 while B’s fight index for this match is only 18 + (10 x 4) = 58. On the other hand if A faces a wrestler C with strength 15 and a ring whose magical power<br><br>is 5, then C wins. In this match, A’s fight index is 10 + (3 x 15) = 55 while C’s fight index is 15 + (5 x 10) = 65. Similarly, in a match between Band C, C wins.<br><br>The Rajah organised a wrestling festival once a year. During this festival, each wrestler fought every other wrestler exactly once. At the end of the contest Rajahh honoured all the wrestlers by inviting them to his court and giving them gold coins.<br><br>It was the job of the Minister to decide the order in which the wrestlers got to meet the Rajah. This was an important task, because our Rajah was rather eccentric. He had declared that the number of coins to be given to a wrestler was determined by the number of matches he won and his position in the sequence: a wrestler was given one gold coin for each match he won and one gold coin for each wrestler whom he defeated but who was ahead of him in.the line to meet the Rajahh.<br><br>For instance if the Minister had presented the wrestlers A, Band C described above in the order A, B, C to the Rajahh, then A would get 1 gold coin (for the match he won against B), B would get 0 gold coins (since he won no matches) and C would get 4 gold coins (two for his wins against A and B, one because he beat A and A met the Rajah before him and one more since he beat Band B met the Rajah before him). Instead if the minister had presented them in the order C, A, B then C would get 2 coins (for his wins against A and<br><br>B), A would get 1 coin (for his win against B) and B would get 0 coins. .<br><br>The Minister is concerned about the finances of the kingdom. and wants to minimise the number of coins handed out by the Rajah to the wrestlers. Your task is to help the .Minister decide the sequence in which the wrestlers should be presented to the Rajah so that the number of gold coins handed out is minimum. You are provided with the strengths of all the wrestlers and the magical powers of their rings. You may assume that these values are such that no match. results in a tie.<br><br><br><br>Input format<br><br>The first line of input is an integer N indicating the number of wrestlers. Each wrestler is identified by a unique number in the range. {1, 2,. . ., N}. The next N lines each contain 2<br><br>positive integers. For 1 &lt; = i &lt;= N, the first integer on line i+1 denotes the strength Si of wrestler i and the second integer denotes the magical power Ri westler i’s ring. You may assume that 1 &lt;= n <br><br>&lt; =10000 and each wrestler i, 1 &lt;= Si &lt;= 1000 and 1&lt;=Ri&lt;=1000<br><br> <br><br><br><br>Output format<br><br>The output consists of N lines, indicating the sequence in which the wrestlers should meet the Rajah to mini mise the number of gold coins handed out by the Rajah. Thus, each line of output should be an integer between 1 and N and every integer between 1 and N should appear exactly once in the output. If the integer on line i is j, it means that wrestler j is the ith wrestler to meet the Rajah.<br><br><br><br>Example<br><br>Here is sample input and output corresponding to the example discussed above.<br><br><br><br>Sample input<br><br><br><br>3<br><br>103<br><br>184<br><br>155<br><br>Sample output<br><br><br><br><br><br>3<br><br>2<br><br>1<br><br> <br><br>ps if doees not make any sence it is because of ocr<br><br>email me and i will email you the jpg’s<br><br>mohittaneja@gmail.com</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@ananayarora" class="p-author h-card">Ananay Arora</a> on <a href="https://medium.com/p/d8011dd7d393"><time class="dt-published" datetime="2004-05-22T06:38:00.000Z">May 22, 2004</time></a>.</p><p><a href="https://medium.com/@ananayarora/question-1-d8011dd7d393" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on July 13, 2025.</p></footer></article></body></html>

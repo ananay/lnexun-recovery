@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>E-lite 2014 Programming Senior Finals Solutions Part1</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">E-lite 2014 Programming Senior Finals Solutions Part1</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="cc31" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="3725" id="3725" class="graf graf--h3 graf--leading graf--title">E-lite 2014 Programming Senior Finals Solutions Part1</h3><p name="7a59" id="7a59" class="graf graf--p graf-after--h3">Here is the editorial for the Senior Programming Finals. The contest can be found <a href="https://www.hackerrank.com/contests/e-lite-programming-finals/" data-href="https://www.hackerrank.com/contests/e-lite-programming-finals/" class="markup--anchor markup--p-anchor" title="Elite SP Finals 2014" rel="noopener" target="_blank">here</a></p><p name="a48d" id="a48d" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Problem1. Odd</strong><br>This was a straightforward question. Only perfect square numbers have an odd number of factors. Though this can be seen by observation(and is sufficient for solving this problem), you may want to know how we formally prove this:<br>Assume that there is a perfect square <strong class="markup--strong markup--p-strong">N.</strong> Let <strong class="markup--strong markup--p-strong">A</strong> be the set of natural numbers which are strictly smaller than floor(square_root(N)) . Let <strong class="markup--strong markup--p-strong">B</strong> be the set of natural numbers derived form <strong class="markup--strong markup--p-strong">A</strong> such that for every element(a) belonging to <strong class="markup--strong markup--p-strong">A</strong> there is a corresponding element N/a in <strong class="markup--strong markup--p-strong">B </strong>. The sets <strong class="markup--strong markup--p-strong">A</strong> and <strong class="markup--strong markup--p-strong">B</strong> do not intersect since if they did, a=N/a =&gt; a²=N =&gt; a is the square root of <strong class="markup--strong markup--p-strong">N</strong>, but the square root of <strong class="markup--strong markup--p-strong">N</strong> does not belong to set <strong class="markup--strong markup--p-strong">A</strong> and we have a contradiction. Since these sets do not intersect, the total number of factors of <strong class="markup--strong markup--p-strong">N</strong> is 2*k + 1(where k is the number of elements in A, and 1 extra factor is the square root of N). Thus, N had an odd number of factors.<br>So, we need to output the sum of the first <strong class="markup--strong markup--p-strong">N</strong> perfect squares(where N was given in the problem) modulo M. The formula for that is N*(N+1)*(2*N+1)/6.<br>Some of you had a problem outputting the answer modulo 10⁹ + 7. This is where language matters : python can easily handle large numbers and you could have just done (print ans % M) to get your solution accepted. Its different with C++ however since there can be overflows while handling large numbers, You can read more about modulo operations <a href="http://codeaccepted.wordpress.com/2014/02/15/output-the-answer-modulo-109-7/" data-href="http://codeaccepted.wordpress.com/2014/02/15/output-the-answer-modulo-109-7/" class="markup--anchor markup--p-anchor" title="Modulo" rel="noopener" target="_blank">here</a>. Another common mistake was using x^y over pow(x,y): x^y <strong class="markup--strong markup--p-strong">does not</strong> mean x raised to power y in C++, it means x XOR y.</p><p name="bbc7" id="bbc7" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Problem2. Walk Over Me</strong><br>This is a classic Dynamic Programming problem. First of all you would need to figure out the intersection points, since the arrays are sorted this can be done in linear time. After this is done, the recurrence is simple,<br>maxSum(i) = max_(over all intersections j&lt;i){ maxSum(j) + branchSum(j..i) }<br>For the people who got interviewed, the above recurrence is what I wanted as an answer: when we are given the optimal solutions to 1..i-1, we can find the optimal solution to i using the above recurrence.</p><p name="cebc" id="cebc" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Problem3. Mad Scientist</strong><br>This was a tough problem to solve if you are not familiar with graphs. Unfortunately, some people jumped to this problem without attempting the first one(!). How you choose the problems pretty much decides how well you do in a programming contest.<br>For each pair of chemicals which can react, we add an edge in the graph. Once we have this information in a graph, we can find the “connected components” of this graph. When two chemicals are in a connected component, it basically means there is a sequence of links by which one can reach one of the chemicals starting from the other. For example, if A reacts with B, B reacts with C, and A reacts with D, then A,B,C,D form a connected component. Note that the order of adding chemicals within a connected component does not matter, the final power after adding all the chemicals is always initialPower * 2^(Size of Component — 1). So, the solution is to form the graph and then report the answer as 2^(V-number of distinct connected components).</p><p name="49d2" id="49d2" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Problem4. Non Zero</strong><br>This was an AdHoc implementation problem. Going from the left, maintain a counter recording the position of the last zero. Whenever a nonZero element is seen, swap that element with the element at counter, and increment the counter. I think the above is better understood by some code:</p><figure name="a285" id="a285" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*0Po3yfrusCgL6Bcp.png" data-width="300" data-height="257" data-external-src="http://www.lnexun.com/wp-content/uploads/2014/07/nonZero-300x257.png" alt="nonZero" src="https://cdn-images-1.medium.com/max/800/0*0Po3yfrusCgL6Bcp.png"></figure><p name="9a90" id="9a90" class="graf graf--p graf-after--figure graf--trailing"><strong class="markup--strong markup--p-strong">Problem 6. Knights</strong><br>This was a relatively hard graph problem. Consider the <strong class="markup--strong markup--p-strong">N*N</strong> squares on the (chess?)board as vertices. Then find the shortest distance between each pair of vertices. I used <a href="http://en.wikipedia.org/wiki/Breadth-first_search" data-href="http://en.wikipedia.org/wiki/Breadth-first_search" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Breadth First Search</a> to do this. The running time of this step is <strong class="markup--strong markup--p-strong">O(N4)</strong>. <a href="http://en.wikipedia.org/wiki/Floyd-Warshall" data-href="http://en.wikipedia.org/wiki/Floyd-Warshall" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Floyd-Warshall</a> is not recommended here, since the graph is relatively sparse, and using it will cause solutions to time out. Then we wish to find the optimal point for the knights to gather at, and the total distance they need to travel to get there. For this, we iterate over each of the <strong class="markup--strong markup--p-strong">N*N</strong> <em class="markup--em markup--p-em">candidate</em> points and for each <em class="markup--em markup--p-em">candidate</em> point, we sum the distance each knight would need to travel to get to that point. Then we find and print the minimum value among the so-calculated distance sums of each point. The running time of this step is <strong class="markup--strong markup--p-strong">O(N2*M)</strong>, which simplifies to <strong class="markup--strong markup--p-strong">O(N4)</strong> for lazy implementations, like my own. The total running time is hence <strong class="markup--strong markup--p-strong">O(N4)</strong>.</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@ananayarora" class="p-author h-card">Ananay Arora</a> on <a href="https://medium.com/p/44813583dd23"><time class="dt-published" datetime="2014-07-20T05:30:12.000Z">July 20, 2014</time></a>.</p><p><a href="https://medium.com/@ananayarora/e-lite-2014-programming-senior-finals-solutions-part1-44813583dd23" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on July 13, 2025.</p></footer></article></body></html>

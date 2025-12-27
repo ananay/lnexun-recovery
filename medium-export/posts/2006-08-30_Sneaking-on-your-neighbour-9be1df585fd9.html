@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Sneaking on your neighbour</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Sneaking on your neighbour</h1>
+</header>
+<section data-field="body" class="e-content">
+<section name="0266" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="3d1e" id="3d1e" class="graf graf--h3 graf--leading graf--title">Sneaking on your neighbour</h3><p name="7d7d" id="7d7d" class="graf graf--p graf-after--h3">This article and the tricks given in it are only possible on <strong class="markup--strong markup--p-strong">sify broadband</strong>. I have not tried it on a system with airtel broadband but I hope it does work on it too. People using airtel broadband plz leave u’r observations in the comments.<br><br><br>The trick which i am about to tell u will allow u too see the address of the site which your neighbour is viewing at that moment, also the user i.d. and computer name or the service being used by him, but it works only in a range of <strong class="markup--strong markup--p-strong">1.5–2 k.m.</strong> ie.all your neighbour’s within a radius of 1.5–2k.m. will be a victim to this. It will only work if your neighbour and u have a sify broadband connection. Please do not hesitate to use this trick as sify already knows about this trick but they do not wish to correct it.<br><br>1) Download any packet analyzer from the internet. As u all know that when you connect to the internet, information is transferred in the form of data packets. Therefore this packet analyzer will capture useful packets and display it to you.<br>I recommend that u download ethereal from the following link:<br><strong class="markup--strong markup--p-strong">http://www.ethereal.com/download.html</strong><br><br>2) Now the basic principle on which sify broadband works is that a local server and a router are installed after every 2 k.m. these routers distribute the connection to at least 20 users of the same neighbourhood and all these routers are together connected to the local server.<br>So, now the basic problem in such a network is that data being exchanged can be captured by any p.c. in the network.<br><br>3) So now, just connect to internet using sify and open the packet analyzer (I am going to be using ethereal over here), click on the button on the left side which says capture data packets. Select u’r network and say capture.<br><br>4) Now just leave it on for a few minutes and then click stop.I will like to show you the output which I had got</p><p name="8678" id="8678" class="graf graf--p graf-after--p graf--trailing">5) I would like to tell u that my sify i.p. was 10.19.48.46. Now if u look closely at the output I have got, u will notice that it has captured all data packets which are being sent to the local server. To get the data which is in the data packet just click on it and look into the white space in the bottom.<br>In order to give u a clear picture I will just discuss the data packets which I have captured:-<br>1) <strong class="markup--strong markup--p-strong">HOST ANNOUCEMENT PRASANJI -016573</strong><br>This tells u that the user with the user i.d.-prasanji has just logged into the network. The data of this packet is something which I will discuss in the next post.<br>2) <strong class="markup--strong markup--p-strong">STANDARD QUERY PTR-BITTORRENT</strong><br>if u see the contents of the data packet then u will see that the user-shrisai with an i.p.-10.19.48.102 is using bittorrent to download something.<br>3) <strong class="markup--strong markup--p-strong">ALL THOSE DATA PACKETS WITH A PROTOCOL</strong>( it’s a column in the arrangement ) <strong class="markup--strong markup--p-strong">AS DNS</strong><br><br>The simple analysis of these data packets will tell u the site which the other user is viewing. For eg. On clicking a data packet and then looking in the white column gives me the following output<br><br>000 00 c0 69 0c 23 84 00 05 6b 00 0e a9 08 00 45 00 ..i.#… k…..E.<br>0010 00 3e 01 f5 00 00 80 11 26 b7 0a 13 30 2e ca 90 .&gt;…… &amp;…0…<br>0020 0d 32 04 14 00 35 00 2a 0d e0 49 43 01 00 00 01 .2…5.* ..IC….<br>0030 00 00 00 00 00 00 03 77 77 77 06 67 6f 6f 67 6c …….<strong class="markup--strong markup--p-strong">w ww.googl<br></strong>0040 65 02 63 6f 02 69 6e 00 00 1c 00 01 <strong class="markup--strong markup--p-strong">e.co.in. ….</strong><br><br>this simply tells me that the user has opened <strong class="markup--strong markup--p-strong">google.co.in</strong>. The userid of this peson would be visible in the info column.<br><br><br>If any one of u have any doubts about this post then please send me a mail at <a href="mailto:cool_ank3@yahoo.com" data-href="mailto:cool_ank3@yahoo.com" class="markup--anchor markup--p-anchor" target="_blank">cool_ank3@yahoo.com</a>..<br><br>My next post would be about using free sify broadband but would only be posted on next wednesday,by the way <strong class="markup--strong markup--p-strong">this just tells us how weak sify is in the matters of security</strong>. So If any one of u are using sify broadband then please throw it away.<br><br>Ankit srivastava</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@ananayarora" class="p-author h-card">Ananay Arora</a> on <a href="https://medium.com/p/9be1df585fd9"><time class="dt-published" datetime="2006-08-30T04:41:00.000Z">August 30, 2006</time></a>.</p><p><a href="https://medium.com/@ananayarora/sneaking-on-your-neighbour-9be1df585fd9" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on July 13, 2025.</p></footer></article></body></html>
